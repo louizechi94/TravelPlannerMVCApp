@@ -26,13 +26,17 @@ namespace TravelPlannerMVCApp.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var itinerary = await _itineraryService.GetItinerary(id);
-            return View(itinerary);
+            var iEdit = new ItineraryEdit
+            {
+                Id = itinerary.Id,
+            };
+            return View(iEdit);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(ItineraryEdit itineraryEdit)
         {
-            if (ModelState.IsValid) 
+            if (!ModelState.IsValid) 
             {
                 return BadRequest(ModelState);
             }

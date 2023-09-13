@@ -19,6 +19,21 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @if(Model.ScheduledEvents.Count() > 0)
+    {
+        foreach(var s in Model.ScheduledEvents)
+        {
+            <h1> @s.Title </h1>
+            <p>@s.Description</p>
+        }
+    }
+    else
+    {
+        <p>Sorry there are no available scheduled Events</p>
+    }
+</div>
+<div>
+    
+    @* @Html.ActionLink("Edit", "Edit", new {  id = Model.Id }) | *@
     <a asp-action="Index">Back to List</a>
 </div>

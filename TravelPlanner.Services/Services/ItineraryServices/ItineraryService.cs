@@ -38,7 +38,7 @@ namespace TravelPlanner.Services.Services.ItineraryServices
 
         public async Task<ItineraryDetail> GetItinerary(int Id)
         {
-           return _mapper.Map<ItineraryDetail>(await _context.Itineraries.FindAsync(Id));
+           return _mapper.Map<ItineraryDetail>(await _context.Itineraries.Include(i=> i.ScheduledEvents).FirstOrDefaultAsync(x=> x.Id==Id));
         }
 
         public async Task<bool> UpdateItinerary(ItineraryEdit itinerary)
