@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TravelPlanner.Models.ViewModeles.DestinationModels.DestinationListItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Destinations</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                
+                <a asp-route-id="@item.Id" asp-action="Edit" class="btn btn-warning">Edit</a> |
+                <a asp-route-id="@item.Id" asp-action="Detail" class="btn btn-info">Detail</a> |
+                <a asp-route-id="@item.Id" asp-action="Delete" class="btn btn-danger">Delete</a> |
+                  
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
