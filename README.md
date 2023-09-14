@@ -5,7 +5,7 @@ Purpose:The purpose of the Travel Planner MVC app is to help users plan and orga
 such as destination, dates, and activities the plan to do.Also include features like itinerary , budget tracking...
 
 Users table:
-Get all users by click on users you will get all the users we have.
+Get all users by click on users you will get all the users we have..
 Add new user using the create new blue botton.
 Edit an Existing User using the orange Edit botton to update an existing user.
 You can see the detail of the user by clicking on the aqua detail botton it will shows all the detais of the users.
